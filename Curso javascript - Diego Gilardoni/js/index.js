@@ -153,56 +153,30 @@ document.getElementById('statsButton').addEventListener('click', () => {
 
 // Mostrar/Ocultar Botones
 
-//Agregar
+function toggleSection(button, section, showText, hideText) {
+  button.addEventListener("click", function () {
+    if (section.classList.contains("oculto")) {
+      section.classList.remove("oculto");
+      button.textContent = hideText;
+    } else {
+      section.classList.add("oculto");
+      button.textContent = showText;
+    }
+  });
+}
+
 const mostrarAgregarButton = document.getElementById("mostrarAgregar");
 const agregarPokemonDiv = document.getElementById("agregar");
+toggleSection(mostrarAgregarButton, agregarPokemonDiv, "Agregar Pokémon", "Ocultar Agregar Pokémon");
 
-mostrarAgregarButton.addEventListener("click", function () {
-    if (agregarPokemonDiv.classList.contains("oculto")) {
-        agregarPokemonDiv.classList.remove("oculto");
-        mostrarAgregarButton.textContent = "Ocultar Agregar Pokémon";
-    } else {
-        agregarPokemonDiv.classList.add("oculto");
-        mostrarAgregarButton.textContent = "Agregar Pokémon";
-    }
-});
-//Buscar
 const mostrarBusquedaButton = document.getElementById("mostrarBusqueda");
 const buscarPokemonDiv = document.getElementById("buscar");
+toggleSection(mostrarBusquedaButton, buscarPokemonDiv, "Búscar Pokémon", "Ocultar Búsqueda Pokémon");
 
-mostrarBusquedaButton.addEventListener("click", function () {
-    if (buscarPokemonDiv.classList.contains("oculto")) {
-        buscarPokemonDiv.classList.remove("oculto");
-        mostrarBusquedaButton.textContent = "Ocultar Búsqueda Pokémon";
-    } else {
-        buscarPokemonDiv.classList.add("oculto");
-        mostrarBusquedaButton.textContent = "Búscar Pokémon";
-    }
-});
-//Todos
 const mostrarTodosButton = document.getElementById("buscarTodos");
 const mostrarTodosDiv = document.getElementById("mostrarTodos");
+toggleSection(mostrarTodosButton, mostrarTodosDiv, "Mostrar Todos", "Ocultar Mostrar Todos");
 
-mostrarTodosButton.addEventListener("click", function () {
-    if (mostrarTodosDiv.classList.contains("oculto")) {
-        mostrarTodosDiv.classList.remove("oculto");
-        mostrarTodosButton.textContent = "Ocultar Mostrar Todos";
-    } else {
-        mostrarTodosDiv.classList.add("oculto");
-        mostrarTodosButton.textContent = "Mostrar Todos";
-    }
-});
-
-//Estadisticas
 const statsButton = document.getElementById("statButton");
 const pokeEstadisticasDiv = document.getElementById("pokeEstadisticas");
-
-statsButton.addEventListener("click", function () {
-    if (pokeEstadisticasDiv.classList.contains("oculto")) {
-        pokeEstadisticasDiv.classList.remove("oculto");
-        statsButton.textContent = "Ocultar Consulta de Estadísticas";
-    } else {
-        pokeEstadisticasDiv.classList.add("oculto");
-        statsButton.textContent = "Consultar Estadísticas";
-    }
-});
+toggleSection(statsButton, pokeEstadisticasDiv, "Consultar Estadísticas", "Ocultar Consulta de Estadísticas");
