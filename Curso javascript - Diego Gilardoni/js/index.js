@@ -151,32 +151,12 @@ document.getElementById('statsButton').addEventListener('click', () => {
       });
 });
 
-// Mostrar/Ocultar Botones
 
-function toggleSection(button, section, showText, hideText) {
-  button.addEventListener("click", function () {
-    if (section.classList.contains("oculto")) {
-      section.classList.remove("oculto");
-      button.textContent = hideText;
-    } else {
-      section.classList.add("oculto");
-      button.textContent = showText;
-    }
-  });
-}
+const pokedexTitles = document.querySelectorAll('.pokedex-title');
 
-const mostrarAgregarButton = document.getElementById("mostrarAgregar");
-const agregarPokemonDiv = document.getElementById("agregar");
-toggleSection(mostrarAgregarButton, agregarPokemonDiv, "Agregar Pokémon", "Ocultar Agregar Pokémon");
-
-const mostrarBusquedaButton = document.getElementById("mostrarBusqueda");
-const buscarPokemonDiv = document.getElementById("buscar");
-toggleSection(mostrarBusquedaButton, buscarPokemonDiv, "Búscar Pokémon", "Ocultar Búsqueda Pokémon");
-
-const mostrarTodosButton = document.getElementById("buscarTodos");
-const mostrarTodosDiv = document.getElementById("mostrarTodos");
-toggleSection(mostrarTodosButton, mostrarTodosDiv, "Mostrar Todos", "Ocultar Mostrar Todos");
-
-const statsButton = document.getElementById("statButton");
-const pokeEstadisticasDiv = document.getElementById("pokeEstadisticas");
-toggleSection(statsButton, pokeEstadisticasDiv, "Consultar Estadísticas", "Ocultar Consulta de Estadísticas");
+pokedexTitles.forEach(title => {
+    title.addEventListener('click', () => {
+        const content = title.nextElementSibling;
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    });
+});
