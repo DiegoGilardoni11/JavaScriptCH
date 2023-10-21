@@ -98,8 +98,14 @@ function limpiarSalidas() {
   document.getElementById('salidaBuscar').innerText = '';
   document.getElementById('buscarNumError').innerText = '';
   document.getElementById('salidaTodos').innerText = '';
+  document.getElementById('statsExito').innerText = '';
+  document.getElementById('statsError').innerText = '';
 }
 
+// Función para borrar todas las salidas
+function borrarSalidas() {
+  limpiarSalidas();
+}
 
 // Guardar Pokédex
 function guardarPokedex() {
@@ -123,6 +129,7 @@ document.getElementById('agregarButton').addEventListener('click', function () {
 document.getElementById('buscarNombreButton').addEventListener('click', buscarPokeNombre);
 document.getElementById('buscarNumeroButton').addEventListener('click', buscarPokeNumero);
 document.getElementById('mostrarTodosButton').addEventListener('click', mostrarTodosLosPokemon);
+document.getElementById('borrarSalidasButton').addEventListener('click', borrarSalidas);
 
 
 //  Consulta de estadisticas a PokeApi
