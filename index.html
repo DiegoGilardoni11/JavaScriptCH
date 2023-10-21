@@ -4,80 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <link rel="icon" href="./multimedia/pokedex.png">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
+  <h1 class="titulo">
+    <img src="./multimedia/pokedex.png" alt="" class="imagen-titulo">
+    Pokedex
+  </h1>
 
-    
-
-    <div class="pokedex-container">
-       
-        <h1 style="text-align: center; color: white";><img src="./multimedia/pokedex.png" alt="">INTENTO DE POKÉDEX</h1>
-        <!-- Agregar Pokémon -->
-        <div class="pokedex-button">
-            <div class="pokedex-title">Agregar Pokémon</div>
-            <div class="pokedex-content">
-                <label for="nombreInput">Nombre:</label>
-                <input type="text" id="nombreInput" placeholder="Nombre del Pokémon"><br>
-                <div class="error" id="salidaExiste"></div>
-                <label for="tipoInput">Tipo:</label>
-                <input type="text" id="tipoInput" placeholder="Tipo del Pokémon"><br>
-                <label for="numeroInput">Número:</label>
-                <input type="text" id="numeroInput" placeholder="Número del Pokémon"><br>
-                <div class="error" id="salidaNumExiste"></div>
-                <button id="agregarButton">Agregar</button>
-                <div class="error" id="salidaError"></div>
-                <div class="exito" id="salidaAgregar"></div>
-            </div>
-        </div>
-
-
-
-            <!-- Buscar Pokémon -->
-            <div class="pokedex-button">
-                <div class="pokedex-title">Buscar Pokémon</div>
-                    <div class="pokedex-content">
-                    <label for="nombreBuscar">Buscar por nombre:</label>
-                    <input type="text" id="nombreBuscar" placeholder="Nombre del Pokémon"><br>
-                    <button id="buscarNombreButton">Buscar</button><br>
-                    <div class="error" id="buscarNomError"></div>
-                    <label for="numeroBuscar">Buscar por número:</label>
-                    <input type="text" id="numeroBuscar" placeholder="Número del Pokémon"><br>
-                    <button id="buscarNumeroButton">Buscar</button>
-                    <div class="error" id="buscarNumError"></div>
-                    <div class="exito" id="salidaBuscar"></div>
-                </div>
-            </div>
-        
-        
-        
-        
-            <!-- Mostrar Todos los Pokémon -->
-            <div class="pokedex-button">
-                <div class="pokedex-title">Mostrar Todos</div>
-                <div class="pokedex-content">
-                        <button id="mostrarTodosButton">Mostrar Todos</button><br>
-                        <div class="exito" id="salidaTodos"></div>
-                </div>
-            </div>
-        
-        
-        
-        
-            <!-- Consulta Estadisticas a PokeApi-->
-            <div class="pokedex-button">
-                <div class="pokedex-title">Consulta Estadísticas</div>
-                <div class="pokedex-content">
-                    <label for="pokemonName">Nombre del Pokémon: </label>
-                    <input type="text" id="pokemonName" placeholder="Nombre del Pokémon">
-                    <button id="statsButton">Consultar Estadísticas</button>
-                    <div class="exito" id="statsExito"></div>
-                    <div class="error" id="statsError"></div>
-                </div>
-            </div>
+  <div class="container-test">
+    <button class="collapsible">Agregar Pokémon</button>
+    <div class="content">
+      <label for="nombreInput">Nombre:</label>
+      <input type="text" id="nombreInput" placeholder="Nombre del Pokémon"><br>
+      <div class="error" id="salidaExiste"></div>
+      <label for="tipoInput">Tipo:</label>
+      <input type="text" id="tipoInput" placeholder="Tipo del Pokémon"><br>
+      <label for="numeroInput">Número:</label>
+      <input type="text" id="numeroInput" placeholder="Número del Pokémon"><br>
+      <div class="error" id="salidaNumExiste"></div>
+      <button class="button-content" id="agregarButton">Agregar</button>
+      <div class="error" id="salidaError"></div>
+      <div class="exito" id="salidaAgregar"></div>
     </div>
+
+    <div class="espacio"></div>
+
+    <button class="collapsible">Buscar Pokémon</button>
+    <div class="content">
+      <label for="nombreBuscar">Buscar por nombre:</label>
+      <input type="text" id="nombreBuscar" placeholder="Nombre del Pokémon"><br>
+      <button class="button-content" id="buscarNombreButton">Buscar</button><br>
+      <div class="error" id="buscarNomError"></div>
+      <label for="numeroBuscar">Buscar por número:</label>
+      <input type="text" id="numeroBuscar" placeholder="Número del Pokémon"><br>
+      <button class="button-content" id="buscarNumeroButton">Buscar</button>
+      <div class="error" id="buscarNumError"></div>
+      <div class="exito" id="salidaBuscar"></div>
+    </div>
+
+    <div class="espacio"></div>
+
+    <button class="collapsible">Mostrar Todos Los Pokémon</button>
+    <div class="content">
+      <button class="button-content" id="mostrarTodosButton">Mostrar</button><br>
+      <div class="exito" id="salidaTodos"></div>
+    </div>
+
+    <div class="espacio"></div>
+
+    <button class="collapsible">Consultar Estadísticas</button>
+    <div class="content">
+      <label for="pokemonName">Nombre del Pokémon: </label>
+      <input type="text" id="pokemonName" placeholder="Nombre del Pokémon">
+      <button class="button-content" id="statsButton">Consultar</button>
+      <div class="exito" id="statsExito"></div>
+      <div class="error" id="statsError"></div>
+    </div>
+  </div>
 </body>
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
